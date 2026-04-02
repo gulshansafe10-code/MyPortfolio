@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gulshan Kumar — Digital Marketing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: #222222;
+    color: #222222;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ── TOP HEADER ── */
+  .site-header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .site-header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .site-header .role {
+    font-size: 16px;
+    color: #aaa;
+    margin-bottom: 18px;
+  }
+  .site-header .contact-line {
+    display: none;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: #666666;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    padding: 14px 0;
+  }
+  nav a {
+    display: inline-block;
+    margin: 0 14px;
+    font-size: 14px;
+    color: #fcfcfc;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  nav a:hover { color: #c9430a; }
+
+  /* ── MAIN LAYOUT ── */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 60px 0 40px;
+    border-bottom: 1px solid #eee;
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #c9430a;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #f8f7f7;
+    margin-bottom: 20px;
+  }
+  p { margin-bottom: 14px; color: #444; }
+
+  /* ── PROJECT CARD ── */
+  .project {
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    padding: 32px;
+    margin-bottom: 32px;
+  }
+  .project-number {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c9430a;
+    margin-bottom: 6px;
+  }
+  .project-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 4px;
+  }
+  .project-meta {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 18px;
+  }
+  .project-desc {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 22px;
+  }
+
+  /* ── STATS ROW ── */
+  .stats {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 24px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #e5e5e5;
+  }
+  .stat {
+    flex: 1;
+    background: #fff;
+    padding: 16px 10px;
+    text-align: center;
+  }
+  .stat-val {
+    font-size: 24px;
+    font-weight: 700;
+    color: #c9430a;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: #999;
+  }
+
+  /* ── PROJECT SECTIONS ── */
+  .block { margin-bottom: 18px; }
+  .block-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #111;
+    margin-bottom: 6px;
+    border-left: 3px solid #c9430a;
+    padding-left: 10px;
+  }
+  .block p {
+    margin: 0;
+    font-size: 15px;
+    color: #444;
+  }
+  ul.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.list li {
+    font-size: 15px;
+    color: #444;
+    padding: 3px 0 3px 16px;
+    position: relative;
+  }
+  ul.list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #c9430a;
+  }
+
+  /* ── DELIVERABLES TAGS ── */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .tag {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 4px 12px;
+    font-size: 13px;
+    color: #555;
+  }
+
+  /* ── SKILLS TABLE ── */
+  .skills-table { width: 100%; border-collapse: collapse; }
+  .skills-table tr { border-bottom: 1px solid #eee; }
+  .skills-table td { padding: 10px 0; vertical-align: top; font-size: 15px; }
+  .skills-table td:first-child {
+    font-weight: 700;
+    color: #fdfdfd;
+    width: 180px;
+    padding-right: 20px;
+  }
+  .skills-table td:last-child { color: #ffffff; }
+
+  /* ── SIMPLE LIST ── */
+  .plain-list { list-style: none; padding: 0; }
+  .plain-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+    color: #faf8f8;
+    padding-left: 14px;
+    position: relative;
+  }
+  .plain-list li::before { content: '→'; position: absolute; left: 0; color: #c9430a; }
+
+  /* ── INFO ROWS ── */
+  .info-row {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+  }
+  .info-row .info-label { font-weight: 700; color: #fafafa; min-width: 140px; }
+  .info-row .info-val { color: #f5f3f3; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #1a1a1a;
+    color: #666;
+    text-align: center;
+    padding: 30px;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     HEADER — edit your name and contact here
+════════════════════════════════════════ -->
+<div class="site-header">
+  <h1>Gulshan Kumar</h1>
+  <div class="role">Digital Marketing Specialist</div>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+
+<div class="container">
+
+
+  <!-- ══════════════════════════════════════
+       ABOUT — edit the paragraph below
+  ════════════════════════════════════════ -->
+  <div class="section" id="about">
+    <div class="section-label">Introduction</div>
+    <div class="section-title">About Me</div>
+    <p>
+      My name is Gulshan Kumar. I am a digital marketing student at Bow Valley College in Calgary. I have been working in digital marketing for over 3 years. I have experience with Google Ads, SEO, and social media strategy.
+    </p>
+    <p>
+      This portfolio shows the real projects I worked on — what the goal was, what I did, and what happened. I am looking for a full-time digital marketing job in Calgary.
+    </p>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       PROJECTS — add or remove project blocks below
+  ════════════════════════════════════════ -->
+  <div class="section" id="projects">
+    <div class="section-label">My Work</div>
+    <div class="section-title">Projects</div>
+
+
+    <!-- ── PROJECT 1 ── -->
+    <div class="project">
+      <div class="project-number">Project 01</div>
+      <div class="project-title">Social Media Strategy for ListReady.AI</div>
+      <div class="project-meta">Capstone Project &nbsp;·&nbsp; Bow Valley College &nbsp;·&nbsp; Team of 3 &nbsp;·&nbsp; 2025</div>
+
+      <p class="project-desc">
+        ListReady.AI is an AI tool that helps real estate agents list homes faster. For our capstone project, my team of three had to build a complete social media marketing strategy for them — including a content plan, real posts, and a proposal document.
+      </p>
+
+      <div class="stats">
+        <div class="stat"><div class="stat-val">9</div><div class="stat-label">Social posts made</div></div>
+        <div class="stat"><div class="stat-val">3×/wk</div><div class="stat-label">Posting plan</div></div>
+        <div class="stat"><div class="stat-val">4</div><div class="stat-label">Content pillars</div></div>
+        <div class="stat"><div class="stat-val">2</div><div class="stat-label">Platforms targeted</div></div>
+      </div>
+
+      <div class="block">
+        <div class="block-title">The Problem</div>
+        <ul class="list">
+          <li>ListReady.AI was new and not many real estate agents knew about them</li>
+          <li>They needed a plan for what to post, where to post, and how often</li>
+          <li>They needed actual content they could use right away</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div class="block-title">What We Did</div>
+        <ul class="list">
+          <li>Chose Instagram and Facebook as the main platforms and LinkedIn for B2B reach</li>
+          <li>Planned 3 posts per week — Monday (Pain Points), Wednesday (Education), Friday (Insights)</li>
+          <li>Built 4 content pillars: Pain Points, Education, Industry Insights, Social Proof</li>
+          <li>Designed 9 social media graphics ready to post</li>
+          <li>Wrote a full marketing strategy document with audience, KPIs, and paid boost plan</li>
+          <li>Made a project proposal presentation (PowerPoint) for the client</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div class="block-title">My Part</div>
+        <p>
+          I worked on the content ideas and graphic concepts. I also co-wrote the strategy document and helped build the proposal deck. Some of the post ideas I created: "List Today or Wait?", "Selling Is Confusing — We Make It Simple", "Data Over Guesswork", and "Still Waiting? Your Buyer Isn't."
+        </p>
+      </div>
+
+      <div class="block">
+        <div class="block-title">What We Delivered</div>
+        <div class="tags">
+          <span class="tag">📄 Full Strategy Document</span>
+          <span class="tag">📊 PowerPoint Proposal</span>
+          <span class="tag">🖼 9 Social Media Graphics</span>
+          <span class="tag">📅 Monthly Content Calendar</span>
+          <span class="tag">📈 KPI Measurement Plan</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── PROJECT 2 ── -->
+    <div class="project">
+      <div class="project-number">Project 02</div>
+      <div class="project-title">Google Ads Lead Generation Campaign</div>
+      <div class="project-meta">Work Project &nbsp;·&nbsp; Lumbini Elite Solutions, Bangalore &nbsp;·&nbsp; 2023–2024</div>
+
+      <p class="project-desc">
+        The company had a Google Ads campaign that was running but not getting good results. I rebuilt it from scratch to get more leads at a lower cost.
+      </p>
+
+      <div class="stats">
+        <div class="stat"><div class="stat-val">↑38%</div><div class="stat-label">CTR improved</div></div>
+        <div class="stat"><div class="stat-val">↓22%</div><div class="stat-label">CPC reduced</div></div>
+        <div class="stat"><div class="stat-val">↑More</div><div class="stat-label">Leads per month</div></div>
+        <div class="stat"><div class="stat-val">↑Score</div><div class="stat-label">Quality Score</div></div>
+      </div>
+
+      <div class="block">
+        <div class="block-title">The Problem</div>
+        <ul class="list">
+          <li>Ads were getting clicks but not converting into real leads</li>
+          <li>Cost per click was too high</li>
+          <li>Ad groups were messy and not well organized</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div class="block-title">What I Did</div>
+        <ul class="list">
+          <li>Reorganized all ad groups into tightly themed keyword groups</li>
+          <li>Built a negative keyword list to cut irrelevant traffic</li>
+          <li>Rewrote ad copy to focus on benefits, not just features</li>
+          <li>Switched to Max Conversions bidding after 30 days of data</li>
+          <li>Monitored performance daily and made small improvements regularly</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div class="block-title">Outcome</div>
+        <p>
+          Click-through rate went up by 38%. Cost per click dropped by 22%. The number of leads grew while staying within budget. The campaign kept improving month over month.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- ── PROJECT 3 ── -->
+    <div class="project">
+      <div class="project-number">Project 03</div>
+      <div class="project-title">Technical SEO Audit and Fix</div>
+      <div class="project-meta">Work Project &nbsp;·&nbsp; DeepDive Innovations, Mohali &nbsp;·&nbsp; 2020–2022</div>
+
+      <p class="project-desc">
+        I did a full technical review of the company website to find out why it was not ranking well on Google, then fixed all the issues I found.
+      </p>
+
+      <div class="stats">
+        <div class="stat"><div class="stat-val">Fixed</div><div class="stat-label">All crawl errors</div></div>
+        <div class="stat"><div class="stat-val">Rich</div><div class="stat-label">Results enabled</div></div>
+        <div class="stat"><div class="stat-val">↑CTR</div><div class="stat-label">Organic clicks</div></div>
+        <div class="stat"><div class="stat-val">↑Rank</div><div class="stat-label">Target keywords</div></div>
+      </div>
+
+      <div class="block">
+        <div class="block-title">What I Found</div>
+        <ul class="list">
+          <li>Google could not crawl some pages properly</li>
+          <li>Several broken links across the site</li>
+          <li>Missing or poorly written page titles and meta descriptions</li>
+          <li>No schema markup — so no rich results showing on Google</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div class="block-title">What I Did</div>
+        <ul class="list">
+          <li>Used SEMrush and Ahrefs to run a full site audit</li>
+          <li>Fixed all crawl errors and broken links</li>
+          <li>Rewrote titles and meta descriptions to match real search intent</li>
+          <li>Added schema markup for rich result eligibility</li>
+          <li>Tracked progress weekly using Google Search Console</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- ── PROJECT 4 ── -->
+    <div class="project">
+      <div class="project-number">Project 04</div>
+      <div class="project-title">GA4 and Google Tag Manager Setup</div>
+      <div class="project-meta">Work Project &nbsp;·&nbsp; Lumbini Elite Solutions, Bangalore &nbsp;·&nbsp; 2023</div>
+
+      <p class="project-desc">
+        The conversion tracking was broken and unreliable. Ads were being optimized using bad data. I set up GA4 and Google Tag Manager properly so we could make better decisions.
+      </p>
+
+      <div class="stats">
+        <div class="stat"><div class="stat-val">GA4</div><div class="stat-label">Fully set up</div></div>
+        <div class="stat"><div class="stat-val">GTM</div><div class="stat-label">All tags working</div></div>
+        <div class="stat"><div class="stat-val">Clean</div><div class="stat-label">Reliable data</div></div>
+        <div class="stat"><div class="stat-val">↑Smart</div><div class="stat-label">Bidding enabled</div></div>
+      </div>
+
+      <div class="block">
+        <div class="block-title">What I Did</div>
+        <ul class="list">
+          <li>Audited the old tracking setup and found where it was firing wrong</li>
+          <li>Set up new GTM tags for form submissions, phone clicks, and key page visits</li>
+          <li>Connected GA4 goals into Google Ads for Smart Bidding</li>
+          <li>Tested everything carefully before going live</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <div class="block-title">Outcome</div>
+        <p>
+          We finally had clean, trustworthy conversion data. This let us switch to Smart Bidding which improved campaign performance and made reporting much easier for the team.
+        </p>
+      </div>
+    </div>
+
+
+  </div><!-- end projects -->
+
+
+  <!-- ══════════════════════════════════════
+       SKILLS — edit the table rows below
+  ════════════════════════════════════════ -->
+  <div class="section" id="skills">
+    <div class="section-label">What I Know</div>
+    <div class="section-title">Skills</div>
+    <table class="skills-table">
+      <tr><td>Paid Advertising</td><td>Google Ads, Search & Display campaigns, keyword research, ad copy, bid strategy</td></tr>
+      <tr><td>Analytics</td><td>Google Analytics 4, Google Tag Manager, conversion tracking, performance reports</td></tr>
+      <tr><td>SEO</td><td>On-page optimization, technical audits, schema markup, Google Search Console</td></tr>
+      <tr><td>Social Media</td><td>Content strategy, content pillars, posting calendars, Instagram, Facebook, LinkedIn</td></tr>
+      <tr><td>Tools</td><td>SEMrush, Ahrefs, Microsoft Ads, Microsoft Excel</td></tr>
+    </table>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       EDUCATION — edit rows below
+  ════════════════════════════════════════ -->
+  <div class="section" id="education">
+    <div class="section-label">Background</div>
+    <div class="section-title">Education</div>
+    <div class="info-row"><div class="info-label">2024 – 2025</div><div class="info-val">Post Graduate Certificate in Digital Marketing — Bow Valley College, Calgary AB</div></div>
+    <div class="info-row"><div class="info-label">2022 – 2023</div><div class="info-val">Graduate Certificate in Information Technology — Algoma University, Brampton ON</div></div>
+    <div class="info-row"><div class="info-label">2014 – 2018</div><div class="info-val">Bachelor of Engineering (Computer Science) — Punjab Technical University, India</div></div>
+
+    <br>
+    <div class="section-label" style="margin-top:20px;">Certifications</div>
+    <div class="info-row"><div class="info-label">Completed</div><div class="info-val">Google Ads Creative Certified — Google Skillshop</div></div>
+    <div class="info-row"><div class="info-label">Completed</div><div class="info-val">HubSpot SEO Certified — HubSpot Academy</div></div>
+    <div class="info-row"><div class="info-label">Completed</div><div class="info-val">Google Ads Search Certified — Google Skillshop</div></div>
+  </div>
+
+
+
+</div><!-- end container -->
+
+<!-- ══════════════════════════════════════
+     CONTACT FOOTER — portfolio style
+════════════════════════════════════════ -->
+<div id="contact" style="background:#1a1a1a; color:#fff; padding: 70px 40px; text-align:center; margin-top: 60px;">
+  <div style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#c9430a; margin-bottom:14px;">Let's Connect</div>
+  <div style="font-size:30px; font-weight:700; margin-bottom:10px;">Got a project? Let's talk.</div>
+  <div style="font-size:15px; color:#888; max-width:480px; margin:0 auto 40px;">
+    I am open to full-time digital marketing roles in Calgary. Feel free to reach out.
+  </div>
+
+  <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:50px;">
+
+    <a href="mailto:gulshankumar.seo@gmail.com" style="display:flex; align-items:center; gap:12px; background:#2a2a2a; border:1px solid #333; border-radius:6px; padding:16px 24px; text-decoration:none; color:#fff; min-width:220px;">
+      <span style="font-size:22px;">✉</span>
+      <div style="text-align:left;">
+        <div style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">Email</div>
+        <div style="font-size:14px; color:#ddd;">gulshankumar.seo@gmail.com</div>
+      </div>
+    </a>
+
+    <a href="tel:+14376078353" style="display:flex; align-items:center; gap:12px; background:#2a2a2a; border:1px solid #333; border-radius:6px; padding:16px 24px; text-decoration:none; color:#fff; min-width:220px;">
+      <span style="font-size:22px;">📱</span>
+      <div style="text-align:left;">
+        <div style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">Phone</div>
+        <div style="font-size:14px; color:#ddd;">+1 (437) 607-8353</div>
+      </div>
+    </a>
+
+    <div style="display:flex; align-items:center; gap:12px; background:#2a2a2a; border:1px solid #333; border-radius:6px; padding:16px 24px; min-width:220px;">
+      <span style="font-size:22px;">📍</span>
+      <div style="text-align:left;">
+        <div style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:3px;">Location</div>
+        <div style="font-size:14px; color:#ddd;">Calgary, AB, Canada</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="border-top:1px solid #2a2a2a; padding-top:28px; font-size:13px; color:#555;">
+    © 2025 Gulshan Kumar &nbsp;·&nbsp; Digital Marketing Portfolio
+  </div>
+</div>
+
+</body>
+</html>
